@@ -15,7 +15,7 @@
             <label for="passwordInput" class="col-sm-2 col-form-label">Password</label>
             <div class="col-sm-10">
                 <input type="password" name="password" placeholder="password" id="passwordInput"/>
-                <input type="checkbox" onclick="showPassword()"> Show Password
+                <input type="checkbox" onclick="showPassword()"/> Show Password
             </div>
         </div>
         <div class="form-group row">
