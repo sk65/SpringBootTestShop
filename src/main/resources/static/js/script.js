@@ -1,8 +1,4 @@
 function showPassword(_this) {
-    const x = _this.closest(".row").querySelector(".form-control")
-    if (x.type === "password") {
-        x.type = "text";
-    } else {
-        x.type = "password";
-    }
+    const x = _this.closest(".row").querySelector(".passwordInput");
+    x.type = x.type === "password" ? "text" : "password";
 }

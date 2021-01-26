@@ -1,12 +1,11 @@
 package com.example.service;
 
 import com.example.model.Product;
-
-import java.util.List;
-import java.util.Optional;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 public interface ProductService {
-    List<Product> getProducts();
+    Page<Product> getProducts(Pageable pageable);
 
-    List<Product> getFilteredProducts(String filter);
+    Page<Product> getFilteredProducts(Pageable pageable, String filter);
 }

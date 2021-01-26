@@ -3,11 +3,9 @@ package com.example.service;
 import com.example.model.Product;
 import com.example.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Service
 public class ProductServiceImpl implements ProductService {
@@ -20,20 +18,13 @@ public class ProductServiceImpl implements ProductService {
 
 
     @Override
-    public List<Product> getProducts() {
-        return productRepository.findAll();
+    public Page<Product> getProducts(Pageable pageable) {
+        return productRepository.findAll(pageable);
     }
 
     @Override
-    public List<Product> getFilteredProducts(String filter) {
-        return getProducts()
-                .stream()
-                .filter(product -> product
-                        .getName()
-                        .toUpperCase()
-                        .equals(filter.toUpperCase().trim()))
-                .collect(Collectors.toList());
-
+    public Page<Product> getFilteredProducts(Pageable pageable, String filter) {
+        return productRepository.findByNameIgnoreCase(pageable, filter.trim());
     }
 
 

@@ -28,7 +28,8 @@
         <div class="form-group row">
             <label for="inputPassword3" class="col-sm-2 col-form-label"><strong>Password :</strong></label>
             <div class="col-sm-5">
-                <input type="password" class="form-control" name="password" placeholder="password" id="inputPassword3">
+                <input type="password" class="form-control passwordInput" name="password" placeholder="password"
+                       id="inputPassword3">
                 <input type="checkbox" onclick="showPassword(this)"> Show Password
             </div>
         </div>
@@ -40,10 +41,10 @@
             </#if>
         </div>
         <div class="form-group row">
-            <label for="inputPassword3" class="col-sm-2 col-form-label"><strong>Retype password :</strong></label>
+            <label for="inputPassword2" class="col-sm-2 col-form-label"><strong>Retype password :</strong></label>
             <div class="col-sm-5">
-                <input type="password" class="form-control" name="password2" placeholder="retype password"
-                       id="inputPassword3">
+                <input type="password" class="form-control passwordInput" name="password2" placeholder="retype password"
+                       id="inputPassword2">
                 <input type="checkbox" onclick="showPassword(this)"> Show Password
             </div>
         </div>
